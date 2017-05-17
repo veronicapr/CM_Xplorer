@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4D88C981ECB5E1D00D24004"
+               BlueprintIdentifier = "374AB6CA1ECCB3900033DE00"
                BuildableName = "Xplorer.app"
                BlueprintName = "Xplorer"
                ReferencedContainer = "container:Xplorer.xcodeproj">
@@ -32,19 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4D88CB11ECB5E1D00D24004"
+               BlueprintIdentifier = "374AB6E31ECCB3900033DE00"
                BuildableName = "XplorerTests.xctest"
                BlueprintName = "XplorerTests"
-               ReferencedContainer = "container:Xplorer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4D88CBC1ECB5E1D00D24004"
-               BuildableName = "XplorerUITests.xctest"
-               BlueprintName = "XplorerUITests"
                ReferencedContainer = "container:Xplorer.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -52,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4D88C981ECB5E1D00D24004"
+            BlueprintIdentifier = "374AB6CA1ECCB3900033DE00"
             BuildableName = "Xplorer.app"
             BlueprintName = "Xplorer"
             ReferencedContainer = "container:Xplorer.xcodeproj">
@@ -75,7 +65,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4D88C981ECB5E1D00D24004"
+            BlueprintIdentifier = "374AB6CA1ECCB3900033DE00"
             BuildableName = "Xplorer.app"
             BlueprintName = "Xplorer"
             ReferencedContainer = "container:Xplorer.xcodeproj">
@@ -94,7 +84,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4D88C981ECB5E1D00D24004"
+            BlueprintIdentifier = "374AB6CA1ECCB3900033DE00"
             BuildableName = "Xplorer.app"
             BlueprintName = "Xplorer"
             ReferencedContainer = "container:Xplorer.xcodeproj">
