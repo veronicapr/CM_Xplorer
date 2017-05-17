@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cH7-yo-IcN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M7M-j2-mJ4"/>
+                        <viewControllerLayoutGuide type="bottom" id="zLf-CU-hBL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xZ5-51-2Qs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eqO-Qa-dh8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ico_Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPZ-fs-1r9">
+                                <rect key="frame" x="26" y="74" width="106.5" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eqO-Qa-dh8" firstAttribute="top" secondItem="M7M-j2-mJ4" secondAttribute="bottom" id="6xT-1d-IWd"/>
+                            <constraint firstAttribute="trailing" secondItem="eqO-Qa-dh8" secondAttribute="trailing" id="QHI-Vn-TC4"/>
+                            <constraint firstItem="eqO-Qa-dh8" firstAttribute="leading" secondItem="xZ5-51-2Qs" secondAttribute="leading" id="jFL-h0-tri"/>
+                            <constraint firstItem="zLf-CU-hBL" firstAttribute="top" secondItem="eqO-Qa-dh8" secondAttribute="bottom" id="xKw-08-Wu0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KUG-1R-e1c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919.2" y="42.728635682158924"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="phm-YR-c3Y">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cH7-yo-IcN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="vkp-nQ-tlS">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="LRx-IP-Sb6" kind="relationship" relationship="viewControllers" id="998-yM-8gu"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWV-pt-YF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="42.728635682158924"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="6K5-kL-DMX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LRx-IP-Sb6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WEi-vS-Aki"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="wl3-xs-jE8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0DM-RA-OYQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9CR-2d-uMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="42.728635682158924"/>
+        </scene>
+    </scenes>
+</document>
