@@ -118,11 +118,22 @@
                     </tabBar>
                     <connections>
                         <segue destination="LRx-IP-Sb6" kind="relationship" relationship="viewControllers" id="998-yM-8gu"/>
+                        <segue destination="mc3-1P-urO" kind="relationship" relationship="viewControllers" id="xbD-Jn-T3f"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWV-pt-YF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="42.728635682158924"/>
+        </scene>
+        <!--ZoneProgress-->
+        <scene sceneID="Ek9-D9-AFx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ZoneProgress" id="mc3-1P-urO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="che-xu-Sbf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9y-Uc-8Qm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="-434"/>
         </scene>
         <!--Item-->
         <scene sceneID="6K5-kL-DMX">
