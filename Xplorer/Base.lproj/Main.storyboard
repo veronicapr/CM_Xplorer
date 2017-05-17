@@ -40,11 +40,71 @@
                             <constraint firstItem="zLf-CU-hBL" firstAttribute="top" secondItem="eqO-Qa-dh8" secondAttribute="bottom" id="xKw-08-Wu0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KUG-1R-e1c"/>
+                    <navigationItem key="navigationItem" id="KUG-1R-e1c">
+                        <barButtonItem key="rightBarButtonItem" title="Read QR" id="ANf-LI-ysG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e1A-4m-qJ9">
+                                <rect key="frame" x="276" y="6" width="83" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Read QR">
+                                    <color key="titleColor" red="0.78587150183439314" green="0.92517501980997385" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vFV-29-Bdj" kind="popoverPresentation" popoverAnchorView="e1A-4m-qJ9" id="zy7-eq-TJI">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1919.2" y="42.728635682158924"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Rh-p8-H24">
+            <objects>
+                <viewController id="vFV-29-Bdj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W3w-3N-cB9"/>
+                        <viewControllerLayoutGuide type="bottom" id="prQ-Ov-i6m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m72-YT-qzh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap on Start to read a QR code!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xx-He-VNn">
+                                <rect key="frame" x="60" y="193" width="255" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR code reader not yet running..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x61-uh-vmp">
+                                <rect key="frame" x="60" y="524" width="255" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAM-ZW-ml3">
+                                <rect key="frame" x="0.0" y="333" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="4PF-UG-0Wq"/>
+                                    <barButtonItem title="Start!" width="243.5" id="OMQ-5e-aWe"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hyb-K2-Zr4"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.07257933937823835" green="0.07257933937823835" blue="0.07257933937823835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7X-6B-YMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2704.8000000000002" y="42.728635682158924"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="phm-YR-c3Y">
