@@ -2,8 +2,8 @@
 //  ViewController.h
 //  Xplorer
 //
-//  Created by Miguel Ferreira on 16/05/2017.
-//  Copyright © 2017 Miguel Ferreira. All rights reserved.
+//  Created by Verónica Rocha on 17/05/17.
+//  Copyright © 2017 something. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemStart;
 - (IBAction)startStopReading:(id)sender;
 @end
+
 
