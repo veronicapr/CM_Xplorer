@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D424DD171ECCDB8B004BD17D /* ZoneProgress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D424DD151ECCDB8B004BD17D /* ZoneProgress.storyboard */; };
+		D424DD1A1ECCDDE1004BD17D /* MapRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = D424DD191ECCDDE1004BD17D /* MapRegion.m */; };
+		D424DD1E1ECCE7C4004BD17D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D424DD1D1ECCE7C4004BD17D /* CoreLocation.framework */; };
+		D424DD201ECCF1A8004BD17D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D424DD1F1ECCF1A8004BD17D /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D4D88C9E1ECB5E1D00D24004 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D88C9D1ECB5E1D00D24004 /* main.m */; };
 		D4D88CA11ECB5E1D00D24004 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D88CA01ECB5E1D00D24004 /* AppDelegate.m */; };
 		D4D88CA41ECB5E1D00D24004 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D88CA31ECB5E1D00D24004 /* ViewController.m */; };
@@ -38,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		D424DD161ECCDB8B004BD17D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ZoneProgress.storyboard; sourceTree = "<group>"; };
+		D424DD191ECCDDE1004BD17D /* MapRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapRegion.m; sourceTree = "<group>"; };
+		D424DD1B1ECCDDEF004BD17D /* MapRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapRegion.h; sourceTree = "<group>"; };
+		D424DD1D1ECCE7C4004BD17D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D424DD1F1ECCF1A8004BD17D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D4D88C991ECB5E1D00D24004 /* Xplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D88C9D1ECB5E1D00D24004 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4D88C9F1ECB5E1D00D24004 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,7 +61,6 @@
 		D4D88CBD1ECB5E1D00D24004 /* XplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D88CC11ECB5E1D00D24004 /* XplorerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XplorerUITests.m; sourceTree = "<group>"; };
 		D4D88CC31ECB5E1D00D24004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4D88CD41ECB725400D24004 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		D4D88CD61ECB9A6900D24004 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -63,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D424DD201ECCF1A8004BD17D /* AVFoundation.framework in Frameworks */,
+				D424DD1E1ECCE7C4004BD17D /* CoreLocation.framework in Frameworks */,
 				D4D88CD71ECB9A6900D24004 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +92,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D424DD181ECCDD94004BD17D /* Regions */ = {
+			isa = PBXGroup;
+			children = (
+				D424DD191ECCDDE1004BD17D /* MapRegion.m */,
+				D424DD1B1ECCDDEF004BD17D /* MapRegion.h */,
+			);
+			name = Regions;
+			sourceTree = "<group>";
+		};
+		D424DD1C1ECCE421004BD17D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D4D88CA51ECB5E1D00D24004 /* Main.storyboard */,
+				D424DD151ECCDB8B004BD17D /* ZoneProgress.storyboard */,
+				D4D88CAA1ECB5E1D00D24004 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		D4D88C901ECB5E1D00D24004 = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +139,11 @@
 				D4D88CA01ECB5E1D00D24004 /* AppDelegate.m */,
 				D4D88CA21ECB5E1D00D24004 /* ViewController.h */,
 				D4D88CA31ECB5E1D00D24004 /* ViewController.m */,
-				D4D88CA51ECB5E1D00D24004 /* Main.storyboard */,
-				D424DD151ECCDB8B004BD17D /* ZoneProgress.storyboard */,
-				D4D88CAA1ECB5E1D00D24004 /* LaunchScreen.storyboard */,
+				D424DD1C1ECCE421004BD17D /* Storyboards */,
+				D424DD181ECCDD94004BD17D /* Regions */,
+				D4D88C9C1ECB5E1D00D24004 /* Supporting Files */,
 				D4D88CA81ECB5E1D00D24004 /* Assets.xcassets */,
 				D4D88CAD1ECB5E1D00D24004 /* Info.plist */,
-				D4D88C9C1ECB5E1D00D24004 /* Supporting Files */,
 			);
 			path = Xplorer;
 			sourceTree = "<group>";
@@ -151,8 +177,9 @@
 		D4D88CD11ECB724C00D24004 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D424DD1F1ECCF1A8004BD17D /* AVFoundation.framework */,
+				D424DD1D1ECCE7C4004BD17D /* CoreLocation.framework */,
 				D4D88CD61ECB9A6900D24004 /* MapKit.framework */,
-				D4D88CD41ECB725400D24004 /* ImageIO.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -296,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D424DD1A1ECCDDE1004BD17D /* MapRegion.m in Sources */,
 				D4D88CA41ECB5E1D00D24004 /* ViewController.m in Sources */,
 				D4D88CA11ECB5E1D00D24004 /* AppDelegate.m in Sources */,
 				D4D88C9E1ECB5E1D00D24004 /* main.m in Sources */,
