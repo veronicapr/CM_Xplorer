@@ -34,5 +34,7 @@
 - (void) addRegionToLocationManager:(CLLocationManager *) location_manager {
     [location_manager startMonitoringForRegion:_region];
 }
-
+- (void) requestRegionState:(CLLocationManager*) location_manager {
+    [location_manager requestStateForRegion:_region];
+}
 @end

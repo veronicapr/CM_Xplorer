@@ -7,6 +7,7 @@
 //
 
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @interface MapRegion : NSObject
 
@@ -20,5 +21,6 @@
                  RadiusInMeters:(double) radius;
 
 - (void) addRegionToLocationManager:(CLLocationManager*) location_manager;
+- (void) requestRegionState:(CLLocationManager*) location_manager;
 
 @end

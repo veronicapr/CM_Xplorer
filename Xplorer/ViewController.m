@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "MapRegion.h"
 #import <AVFoundation/AVFoundation.h>
 
 
 @interface ViewController ()
 @property (nonatomic) BOOL isReading;
 
+@property (nonatomic, strong) CLLocationManager *location_manager;
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 
@@ -29,6 +31,19 @@
     
     _isReading = NO;
     _captureSession = nil;
+    
+    self.location_manager = [[CLLocationManager alloc] init];
+    self.location_manager.delegate = self;
+    self.location_manager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    NSString *regionID = @"Test_Region";
+    NSString *regionName = @"Residencia";
+    MapRegion *region = [[MapRegion alloc] initRegionWithIdentifier:regionID Name:regionName LatitudeInDegrees:40.641825 LongitudeInDegrees:-8.651025 RadiusInMeters:100.0];
+    
+    [region addRegionToLocationManager:self.location_manager];
+    [_label_landmark_ico setText:@"Region Added"];
+    [region requestRegionState:self.location_manager];
+    
 }
 
 
@@ -37,6 +52,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Region Detection
+-(void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
+    switch (state) {
+        case CLRegionStateInside:
+            [_label_landmark_ico setText:@"Inside"];
+            break;
+        case CLRegionStateOutside:
+            [_label_landmark_ico setText:@"Outside"];
+            break;
+        default:
+            [_label_landmark_ico setText:@"Unkown"];
+            break;
+    }
+}
+
+// QR Code
 - (IBAction)startStopReading:(id)sender {
     if (!_isReading) {
         if ([self startReading]) {
