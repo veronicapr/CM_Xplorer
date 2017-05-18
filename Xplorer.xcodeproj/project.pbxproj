@@ -16,7 +16,6 @@
 		374AB6E91ECCB3900033DE00 /* XplorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 374AB6E81ECCB3900033DE00 /* XplorerTests.m */; };
 		374AB6F61ECD98050033DE00 /* ZoneProgress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374AB6F41ECD98050033DE00 /* ZoneProgress.storyboard */; };
 		3789756F1ECDDD2C003BDBF9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3789756E1ECDDD2C003BDBF9 /* MapViewController.m */; };
-		378975721ECDDD5C003BDBF9 /* MapRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 378975711ECDDD5C003BDBF9 /* MapRegion.m */; };
 		378975761ECDDF37003BDBF9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378975751ECDDF37003BDBF9 /* AVFoundation.framework */; };
 		378975781ECDDF42003BDBF9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378975771ECDDF42003BDBF9 /* CoreLocation.framework */; };
 		3789757A1ECDDF52003BDBF9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378975791ECDDF52003BDBF9 /* MapKit.framework */; };
@@ -48,8 +47,6 @@
 		374AB6EA1ECCB3900033DE00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		374AB6F51ECD98050033DE00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ZoneProgress.storyboard; sourceTree = "<group>"; };
 		3789756E1ECDDD2C003BDBF9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Map_and_Regions/MapViewController.m; sourceTree = "<group>"; };
-		378975701ECDDD5C003BDBF9 /* MapRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapRegion.h; path = Map_and_Regions/MapRegion.h; sourceTree = "<group>"; };
-		378975711ECDDD5C003BDBF9 /* MapRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapRegion.m; path = Map_and_Regions/MapRegion.m; sourceTree = "<group>"; };
 		378975731ECDDD85003BDBF9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Map_and_Regions/MapViewController.h; sourceTree = "<group>"; };
 		378975751ECDDF37003BDBF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		378975771ECDDF42003BDBF9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -142,8 +139,6 @@
 		374AB6F71ECDA4730033DE00 /* Map_and_Regions */ = {
 			isa = PBXGroup;
 			children = (
-				378975701ECDDD5C003BDBF9 /* MapRegion.h */,
-				378975711ECDDD5C003BDBF9 /* MapRegion.m */,
 				378975731ECDDD85003BDBF9 /* MapViewController.h */,
 				3789756E1ECDDD2C003BDBF9 /* MapViewController.m */,
 			);
@@ -267,7 +262,6 @@
 				374AB6D61ECCB3900033DE00 /* ViewController.m in Sources */,
 				3789756F1ECDDD2C003BDBF9 /* MapViewController.m in Sources */,
 				374AB6D31ECCB3900033DE00 /* AppDelegate.m in Sources */,
-				378975721ECDDD5C003BDBF9 /* MapRegion.m in Sources */,
 				374AB6D01ECCB3900033DE00 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

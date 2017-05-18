@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
+@interface ViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, CLLocationManagerDelegate>
+{
+    CLLocationManager *objLocationManager;
+    double latitude_UserLocation, longitude_UserLocation;
+}
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
 @property (weak, nonatomic) IBOutlet UILabel *lblStatus;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemStart;

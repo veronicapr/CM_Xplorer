@@ -10,10 +10,14 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate>
+@interface MapViewController : UIViewController <CLLocationManagerDelegate>{
+    CLLocationManager *objLocationManager;
+    double latitude_UserLocation, longitude_UserLocation;
+}
 
-@property (nonatomic, strong) CLLocationManager *location_manager;
-
--(void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region;
+@property (weak, nonatomic) IBOutlet MKMapView *objMapView;
+@property (weak, nonatomic) IBOutlet UIButton *btnStandard;
+@property (weak, nonatomic) IBOutlet UIButton *btnSatellite;
+@property (weak, nonatomic) IBOutlet UIButton *btnHybrid;
 
 @end

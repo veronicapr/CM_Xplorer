@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+
 @property (nonatomic) BOOL isReading;
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
@@ -16,9 +17,13 @@
 
 -(BOOL)startReading;
 -(void)stopReading;
+
+
+
 @end
 
 @implementation ViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

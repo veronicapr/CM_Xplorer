@@ -77,7 +77,7 @@
         <!--Map-->
         <scene sceneID="cAf-Rv-KhA">
             <objects>
-                <viewController id="kAX-NT-Mgl" sceneMemberID="viewController">
+                <viewController id="kAX-NT-Mgl" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="czV-ne-u5P"/>
                         <viewControllerLayoutGuide type="bottom" id="OMb-aj-UsC"/>
@@ -85,7 +85,43 @@
                     <view key="view" contentMode="scaleToFill" id="WNR-S6-KLS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-wm-8xc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="xj4-bM-3Jq">
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qBn-ur-3wD"/>
+                                    <barButtonItem title="Roads" id="LkF-UV-6GY">
+                                        <connections>
+                                            <action selector="btnStandardTapped:" destination="kAX-NT-Mgl" id="mx6-23-ubP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XpA-8o-CfO"/>
+                                    <barButtonItem title="Satelite" id="A2v-fA-K7C">
+                                        <connections>
+                                            <action selector="btnSatelliteTapped:" destination="kAX-NT-Mgl" id="uTq-K4-rVC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yNd-cO-Ptc"/>
+                                    <barButtonItem title="Satelite with Roads" id="OkW-oL-RNP">
+                                        <connections>
+                                            <action selector="btnHybridTapped:" destination="kAX-NT-Mgl" id="dJq-X8-7J2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bra-pP-Nc4"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jta-wm-8xc" firstAttribute="top" secondItem="czV-ne-u5P" secondAttribute="bottom" id="CvP-wo-cPh"/>
+                            <constraint firstItem="Jta-wm-8xc" firstAttribute="leading" secondItem="WNR-S6-KLS" secondAttribute="leading" id="FtZ-cs-ilV"/>
+                            <constraint firstAttribute="trailing" secondItem="Jta-wm-8xc" secondAttribute="trailing" id="M4n-UV-TJ9"/>
+                            <constraint firstItem="OMb-aj-UsC" firstAttribute="top" secondItem="Jta-wm-8xc" secondAttribute="bottom" id="gow-2n-O8R"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="fc6-FF-eAy">
                         <barButtonItem key="rightBarButtonItem" title="QR Code" id="rE7-AC-OLd">
@@ -94,6 +130,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="objMapView" destination="Jta-wm-8xc" id="QEu-Ch-ud2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmD-oF-z1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,12 +144,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7eu-IO-qiR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="FCd-rk-xRl">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="nLS-qF-hDg" kind="relationship" relationship="viewControllers" id="Geu-eM-GMm"/>
                         <segue destination="Xgm-G3-Dhc" kind="relationship" relationship="viewControllers" id="1BW-gv-rlP"/>
+                        <segue destination="nLS-qF-hDg" kind="relationship" relationship="viewControllers" id="pgR-I0-pD1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcW-iy-L0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,7 +163,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xgm-G3-Dhc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="0b2-r5-gsd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="UHc-lu-H2C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="UHc-lu-H2C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
