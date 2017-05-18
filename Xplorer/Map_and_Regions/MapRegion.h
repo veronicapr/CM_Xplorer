@@ -2,8 +2,8 @@
 //  MapRegion.h
 //  Xplorer
 //
-//  Created by Miguel Ferreira on 17/05/2017.
-//  Copyright © 2017 Miguel Ferreira. All rights reserved.
+//  Created by Verónica Rocha on 18/05/17.
+//  Copyright © 2017 something. All rights reserved.
 //
 
 #import <CoreLocation/CoreLocation.h>
