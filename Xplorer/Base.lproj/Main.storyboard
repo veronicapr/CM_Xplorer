@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7eu-IO-qiR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7eu-IO-qiR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIP-t7-lUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="-313"/>
+            <point key="canvasLocation" x="850" y="-297"/>
         </scene>
         <!--QR Code Reader-->
         <scene sceneID="tne-QT-ifu">
@@ -151,17 +151,18 @@
                     <connections>
                         <segue destination="Xgm-G3-Dhc" kind="relationship" relationship="viewControllers" id="1BW-gv-rlP"/>
                         <segue destination="nLS-qF-hDg" kind="relationship" relationship="viewControllers" id="pgR-I0-pD1"/>
+                        <segue destination="EHs-rN-R1q" kind="relationship" relationship="viewControllers" id="ty8-Jp-PuZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcW-iy-L0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="Ds8-r6-Goe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xgm-G3-Dhc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="0b2-r5-gsd"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="0b2-r5-gsd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="UHc-lu-H2C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -175,6 +176,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35z-hw-D8B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="138.98050974512745"/>
+        </scene>
+        <!--Nearby-->
+        <scene sceneID="xQF-ch-qiw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Nearby" id="EHs-rN-R1q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="z0S-7Z-v7o"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eZp-Fs-Q7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="621"/>
         </scene>
     </scenes>
 </document>

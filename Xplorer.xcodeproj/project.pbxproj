@@ -15,6 +15,9 @@
 		374AB6DE1ECCB3900033DE00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374AB6DC1ECCB3900033DE00 /* LaunchScreen.storyboard */; };
 		374AB6E91ECCB3900033DE00 /* XplorerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 374AB6E81ECCB3900033DE00 /* XplorerTests.m */; };
 		374AB6F61ECD98050033DE00 /* ZoneProgress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374AB6F41ECD98050033DE00 /* ZoneProgress.storyboard */; };
+		377A2B021EE6F59200342BCD /* MPCHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2B011EE6F59200342BCD /* MPCHandler.m */; };
+		377A2B081EE6FD8A00342BCD /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2B071EE6FD8A00342BCD /* ConnectionsViewController.m */; };
+		377A2B0B1EE71A2200342BCD /* Nearby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377A2B091EE71A2200342BCD /* Nearby.storyboard */; };
 		3789756F1ECDDD2C003BDBF9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3789756E1ECDDD2C003BDBF9 /* MapViewController.m */; };
 		378975761ECDDF37003BDBF9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378975751ECDDF37003BDBF9 /* AVFoundation.framework */; };
 		378975781ECDDF42003BDBF9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378975771ECDDF42003BDBF9 /* CoreLocation.framework */; };
@@ -46,6 +49,10 @@
 		374AB6E81ECCB3900033DE00 /* XplorerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XplorerTests.m; sourceTree = "<group>"; };
 		374AB6EA1ECCB3900033DE00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		374AB6F51ECD98050033DE00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ZoneProgress.storyboard; sourceTree = "<group>"; };
+		377A2B011EE6F59200342BCD /* MPCHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCHandler.m; sourceTree = "<group>"; };
+		377A2B061EE6FD8A00342BCD /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsViewController.h; sourceTree = "<group>"; };
+		377A2B071EE6FD8A00342BCD /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsViewController.m; sourceTree = "<group>"; };
+		377A2B0A1EE71A2200342BCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Nearby.storyboard; sourceTree = "<group>"; };
 		3789756E1ECDDD2C003BDBF9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Map_and_Regions/MapViewController.m; sourceTree = "<group>"; };
 		378975731ECDDD85003BDBF9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Map_and_Regions/MapViewController.h; sourceTree = "<group>"; };
 		378975751ECDDF37003BDBF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +103,7 @@
 		374AB6CD1ECCB3900033DE00 /* Xplorer */ = {
 			isa = PBXGroup;
 			children = (
+				377A2B001EE6F54100342BCD /* Multipeer_connectivity */,
 				374AB6D11ECCB3900033DE00 /* AppDelegate.h */,
 				374AB6D21ECCB3900033DE00 /* AppDelegate.m */,
 				374AB6D41ECCB3900033DE00 /* ViewController.h */,
@@ -132,6 +140,7 @@
 				374AB6D71ECCB3900033DE00 /* Main.storyboard */,
 				374AB6DC1ECCB3900033DE00 /* LaunchScreen.storyboard */,
 				374AB6F41ECD98050033DE00 /* ZoneProgress.storyboard */,
+				377A2B091EE71A2200342BCD /* Nearby.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -143,6 +152,16 @@
 				3789756E1ECDDD2C003BDBF9 /* MapViewController.m */,
 			);
 			name = Map_and_Regions;
+			sourceTree = "<group>";
+		};
+		377A2B001EE6F54100342BCD /* Multipeer_connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				377A2B011EE6F59200342BCD /* MPCHandler.m */,
+				377A2B061EE6FD8A00342BCD /* ConnectionsViewController.h */,
+				377A2B071EE6FD8A00342BCD /* ConnectionsViewController.m */,
+			);
+			name = Multipeer_connectivity;
 			sourceTree = "<group>";
 		};
 		378975741ECDDF37003BDBF9 /* Frameworks */ = {
@@ -241,6 +260,7 @@
 				374AB6DE1ECCB3900033DE00 /* LaunchScreen.storyboard in Resources */,
 				374AB6F61ECD98050033DE00 /* ZoneProgress.storyboard in Resources */,
 				374AB6DB1ECCB3900033DE00 /* Assets.xcassets in Resources */,
+				377A2B0B1EE71A2200342BCD /* Nearby.storyboard in Resources */,
 				374AB6D91ECCB3900033DE00 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +282,8 @@
 				374AB6D61ECCB3900033DE00 /* ViewController.m in Sources */,
 				3789756F1ECDDD2C003BDBF9 /* MapViewController.m in Sources */,
 				374AB6D31ECCB3900033DE00 /* AppDelegate.m in Sources */,
+				377A2B021EE6F59200342BCD /* MPCHandler.m in Sources */,
+				377A2B081EE6FD8A00342BCD /* ConnectionsViewController.m in Sources */,
 				374AB6D01ECCB3900033DE00 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +329,14 @@
 				374AB6F51ECD98050033DE00 /* Base */,
 			);
 			name = ZoneProgress.storyboard;
+			sourceTree = "<group>";
+		};
+		377A2B091EE71A2200342BCD /* Nearby.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				377A2B0A1EE71A2200342BCD /* Base */,
+			);
+			name = Nearby.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
