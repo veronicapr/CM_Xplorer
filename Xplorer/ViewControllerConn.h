@@ -1,15 +1,14 @@
 //
-//  ConnectionsViewController.h
+//  ViewControllerConn.h
 //  Xplorer
 //
-//  Created by Verónica Rocha on 06/06/17.
+//  Created by Verónica Rocha on 07/06/17.
 //  Copyright © 2017 something. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface ConnectionsViewController : UIViewController <MCBrowserViewControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewControllerConn : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UISwitch *swVisible;

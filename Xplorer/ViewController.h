@@ -11,11 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, CLLocationManagerDelegate>
-{
-    CLLocationManager *objLocationManager;
-    double latitude_UserLocation, longitude_UserLocation;
-}
+@interface ViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
 @property (weak, nonatomic) IBOutlet UILabel *lblStatus;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemStart;

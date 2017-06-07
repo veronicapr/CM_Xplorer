@@ -53,6 +53,7 @@
 		377A2B061EE6FD8A00342BCD /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsViewController.h; sourceTree = "<group>"; };
 		377A2B071EE6FD8A00342BCD /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsViewController.m; sourceTree = "<group>"; };
 		377A2B0A1EE71A2200342BCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Nearby.storyboard; sourceTree = "<group>"; };
+		377A2B0F1EE821A400342BCD /* MPCHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCHandler.h; sourceTree = "<group>"; };
 		3789756E1ECDDD2C003BDBF9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Map_and_Regions/MapViewController.m; sourceTree = "<group>"; };
 		378975731ECDDD85003BDBF9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Map_and_Regions/MapViewController.h; sourceTree = "<group>"; };
 		378975751ECDDF37003BDBF9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -158,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				377A2B011EE6F59200342BCD /* MPCHandler.m */,
+				377A2B0F1EE821A400342BCD /* MPCHandler.h */,
 				377A2B061EE6FD8A00342BCD /* ConnectionsViewController.h */,
 				377A2B071EE6FD8A00342BCD /* ConnectionsViewController.m */,
 			);

@@ -21,7 +21,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadUserLocation];
+    //[self loadUserLocation];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)btnStandardTapped:(id)sender

@@ -6,46 +6,43 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Nearby-->
         <scene sceneID="Alf-CM-Iyg">
             <objects>
-                <viewController id="xvF-j0-l6N" sceneMemberID="viewController">
+                <viewController id="xvF-j0-l6N" customClass="ConnectionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yMq-X8-1nz"/>
                         <viewControllerLayoutGuide type="bottom" id="CQU-Ah-AGL"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7p8-zI-S4W" customClass="Connections">
+                    <view key="view" contentMode="scaleToFill" id="7p8-zI-S4W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The device name displayed to others…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMv-dg-Yt1">
-                                <rect key="frame" x="36" y="83" width="303" height="30"/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="V5T-lo-Y4W"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Visible to others? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSb-pd-cvI">
-                                <rect key="frame" x="36" y="137" width="160" height="21"/>
+                                <rect key="frame" x="16" y="150" width="160" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-8f-ZWp">
-                                <rect key="frame" x="265" y="132" width="51" height="31"/>
+                                <rect key="frame" x="299" y="145" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleVisibility:" destination="xvF-j0-l6N" eventType="primaryActionTriggered" id="8zh-n2-Bip"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cp-mB-24Z">
                                 <rect key="frame" x="114" y="166" width="146" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search for devices"/>
+                                <connections>
+                                    <action selector="searchForDevices:" destination="xvF-j0-l6N" eventType="primaryActionTriggered" id="3YH-Fb-oKk"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xJ0-Nm-ltr">
                                 <rect key="frame" x="16" y="216" width="343" height="359"/>
@@ -56,15 +53,38 @@
                                 <rect key="frame" x="148" y="583" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Disconnect"/>
+                                <connections>
+                                    <action selector="disconnect:" destination="xvF-j0-l6N" eventType="primaryActionTriggered" id="43P-fs-EZh"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The device name displayed to others…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMv-dg-Yt1">
+                                <rect key="frame" x="16" y="89" width="343" height="30"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="V5T-lo-Y4W"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xMv-dg-Yt1" firstAttribute="leading" secondItem="7p8-zI-S4W" secondAttribute="leadingMargin" constant="10" id="Jga-NZ-dfR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xMv-dg-Yt1" secondAttribute="trailing" constant="10" id="Z0V-VL-gk0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby" id="kCe-CW-SPt"/>
+                    <connections>
+                        <outlet property="btnDisconnect" destination="S01-Qp-tGp" id="tA2-82-W22"/>
+                        <outlet property="swVisible" destination="gYS-8f-ZWp" id="qr7-pa-V2A"/>
+                        <outlet property="tblConnectedDevices" destination="xJ0-Nm-ltr" id="h31-lD-HJv"/>
+                        <outlet property="txtName" destination="xMv-dg-Yt1" id="GNO-B2-S86"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0d-Gn-fhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3340" y="1094.3028485757122"/>
+            <point key="canvasLocation" x="3338.4000000000001" y="1093.4032983508246"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bej-uG-IAp">
@@ -77,7 +97,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="xvF-j0-l6N" kind="relationship" relationship="rootViewController" id="qFe-5H-zXf"/>
+                        <segue destination="xvF-j0-l6N" kind="relationship" relationship="rootViewController" id="Uow-kr-7nq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isi-B5-m0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
