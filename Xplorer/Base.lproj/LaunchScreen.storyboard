@@ -21,20 +21,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AQUIIII" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyU-YP-fbB">
-                                <rect key="frame" x="143" y="271" width="186" height="203"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kRy-zl-iVw">
+                                <rect key="frame" x="62" y="270.5" width="250" height="125"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YaM-rg-ac7">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="2db-Eb-e1l"/>
+                                            <constraint firstAttribute="width" constant="250" id="85j-b6-I7a"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="sBc-Ua-2i9" kind="embed" id="SjA-LV-zOm"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kRy-zl-iVw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="m2G-Gc-kdU"/>
+                            <constraint firstItem="kRy-zl-iVw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="q20-9f-BJy"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="mU7-pA-4X3">
+            <objects>
+                <viewController id="sBc-Ua-2i9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xvr-kV-XHs">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="125"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Obelisk-Filled-2x" translatesAutoresizingMaskIntoConstraints="NO" id="QHR-yg-7t5">
+                                <rect key="frame" x="170" y="34" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TreasureMap-2xFilled" translatesAutoresizingMaskIntoConstraints="NO" id="9nk-tu-DO7">
+                                <rect key="frame" x="148" y="76" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Compass-Filled-2x" translatesAutoresizingMaskIntoConstraints="NO" id="ca4-Tp-nB0">
+                                <rect key="frame" x="21" y="3" width="50" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Xplorer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyU-YP-fbB">
+                                <rect key="frame" x="64" y="41" width="122.5" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCV-fq-za8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="374"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Compass-Filled-2x" width="50" height="50"/>
+        <image name="Obelisk-Filled-2x" width="50" height="50"/>
+        <image name="TreasureMap-2xFilled" width="50" height="50"/>
+    </resources>
 </document>
