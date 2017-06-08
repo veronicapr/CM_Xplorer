@@ -15,32 +15,24 @@
 
 @implementation MapViewController
 
-// ====================================================================================== //
 // Controler variables
-// ====================================================================================== //
 @synthesize location_manager = _location_manager;
 @synthesize user_location = _user_location;
 
-// ====================================================================================== //
 // UI Elements
-// ====================================================================================== //
 @synthesize objMapView;
 @synthesize btnHybrid, btnSatellite, btnStandard;
 
-// ============================================================================================================================================================================ //
+// ====================================================================================== //
 // Map Controller calls
-// ============================================================================================================================================================================ //
+// ====================================================================================== //
 /* Called after the controller's view is loaded into memory */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self loadUserLocation];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self loadUserLocation];
+    CLCircularRegion* region = [self createRegionWithName:@"My location region" Latitude:_user_location.latitude Longitude:_user_location.longitude andRadius:50];
+    [self startRegionMonitoringAndCheckStateForRegion:region];
 }
 /* Memory warning handler */
 - (void)didReceiveMemoryWarning
@@ -48,12 +40,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-// ============================================================================================================================================================================ //
+
+// ====================================================================================== //
 // Map methods
-// ============================================================================================================================================================================ //
 // ====================================================================================== //
 // Location Manager
-// ====================================================================================== //
+
 /* Create region with the given coodinates and radius */
 - (void) loadUserLocation
 {
@@ -69,13 +61,12 @@
 /* Create region with the given coodinates and radius */
 - (void) loadMapView
 {
-    MKCoordinateSpan objCoorSpan = {.latitudeDelta =  0.2, .longitudeDelta =  0.2};
+    MKCoordinateSpan objCoorSpan = {.latitudeDelta = 0.001, .longitudeDelta = 0.001};
     MKCoordinateRegion objMapRegion = {_user_location, objCoorSpan};
     [objMapView setRegion:objMapRegion];
 }
-// ====================================================================================== //
 // Regions
-// ====================================================================================== //
+
 /* Create region with the given coodinates and radius */
 - (CLCircularRegion *)createRegionWithName:(NSString *)name Latitude:(CLLocationDegrees)latitude Longitude:(CLLocationDegrees)longitude andRadius:(int) radius
 {
@@ -90,33 +81,37 @@
     [_location_manager requestStateForRegion:region];
 }
 
-// ============================================================================================================================================================================ //
+// ====================================================================================== //
 // CLLocationManagerDelegate notifications handlers
-// ============================================================================================================================================================================ //
 // ====================================================================================== //
 // Responding to Location Events
-// ====================================================================================== //
+
 /* Tells the delegate that new location data is available */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
-    NSLog(@"%@", locations.description);
-    
-    CLLocation *newLocation = [locations objectAtIndex:0];
-
-    _user_location = newLocation.coordinate;
-    
+    _user_location = locations.firstObject.coordinate;
     [_location_manager stopUpdatingLocation];
-
-    [self loadMapView];
+    MKCoordinateSpan objCoorSpan = {.latitudeDelta = 0.001, .longitudeDelta = 0.001};
+    MKCoordinateRegion objMapRegion = {_user_location, objCoorSpan};
+    [objMapView setRegion:objMapRegion];
 }
 /* Tells the delegate that the location manager was unable to retrieve a location value */
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     [_location_manager stopUpdatingLocation];
 }
-// ====================================================================================== //
 // Responding to Location Events
-// ====================================================================================== //
+
+/* Tells the delegate that the user entered the specified region */
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+{
+    
+}
+/* Tells the delegate that the user left the specified region */
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
+{
+    
+}
 /* Tells the delegate about the state of the specified region */
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
@@ -137,10 +132,19 @@
             break;
     }
 }
-
-// ============================================================================================================================================================================ //
+/* Tells the delegate that a region monitoring error occurred */
+- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
+{
+    
+}
+/* Tells the delegate that a new region is being monitored */
+- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
+{
+    
+}
+// ====================================================================================== //
 // Button functions
-// ============================================================================================================================================================================ //
+// ====================================================================================== //
 /* Changes map to show only roads */
 - (IBAction)btnStandardTapped:(id)sender
 {

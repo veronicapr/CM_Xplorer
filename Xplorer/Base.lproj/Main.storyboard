@@ -13,11 +13,11 @@
         <scene sceneID="erQ-Kw-NGM">
             <objects>
                 <viewControllerPlaceholder storyboardName="ZoneProgress" id="nLS-qF-hDg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qh9-6N-UY0"/>
+                    <navigationItem key="navigationItem" id="NEb-Qe-Qkg"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIP-t7-lUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="-297"/>
+            <point key="canvasLocation" x="868" y="608.9955022488756"/>
         </scene>
         <!--QR Code Reader-->
         <scene sceneID="tne-QT-ifu">
@@ -89,9 +89,8 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-wm-8xc">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="xj4-bM-3Jq">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="xj4-bM-3Jq">
                                 <rect key="frame" x="0.0" y="574" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qBn-ur-3wD"/>
                                     <barButtonItem title="Roads" id="LkF-UV-6GY">
@@ -120,7 +119,10 @@
                             <constraint firstItem="Jta-wm-8xc" firstAttribute="top" secondItem="czV-ne-u5P" secondAttribute="bottom" id="CvP-wo-cPh"/>
                             <constraint firstItem="Jta-wm-8xc" firstAttribute="leading" secondItem="WNR-S6-KLS" secondAttribute="leading" id="FtZ-cs-ilV"/>
                             <constraint firstAttribute="trailing" secondItem="Jta-wm-8xc" secondAttribute="trailing" id="M4n-UV-TJ9"/>
+                            <constraint firstItem="OMb-aj-UsC" firstAttribute="top" secondItem="xj4-bM-3Jq" secondAttribute="bottom" id="Orc-CI-gSM"/>
+                            <constraint firstItem="xj4-bM-3Jq" firstAttribute="leading" secondItem="WNR-S6-KLS" secondAttribute="leading" id="VEQ-OE-uPB"/>
                             <constraint firstItem="OMb-aj-UsC" firstAttribute="top" secondItem="Jta-wm-8xc" secondAttribute="bottom" id="gow-2n-O8R"/>
+                            <constraint firstAttribute="trailing" secondItem="xj4-bM-3Jq" secondAttribute="trailing" id="ifs-Qa-mWL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="fc6-FF-eAy">
@@ -150,7 +152,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Xgm-G3-Dhc" kind="relationship" relationship="viewControllers" id="1BW-gv-rlP"/>
-                        <segue destination="nLS-qF-hDg" kind="relationship" relationship="viewControllers" id="pgR-I0-pD1"/>
+                        <segue destination="Xdz-I5-vzY" kind="relationship" relationship="viewControllers" id="pgR-I0-pD1"/>
                         <segue destination="EHs-rN-R1q" kind="relationship" relationship="viewControllers" id="ty8-Jp-PuZ"/>
                     </connections>
                 </tabBarController>
@@ -162,7 +164,7 @@
         <scene sceneID="Ds8-r6-Goe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xgm-G3-Dhc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="0b2-r5-gsd"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Compass" selectedImage="Compass-Filled" id="fIT-zI-kPh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="UHc-lu-H2C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -181,11 +183,38 @@
         <scene sceneID="xQF-ch-qiw">
             <objects>
                 <viewControllerPlaceholder storyboardName="Nearby" id="EHs-rN-R1q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="z0S-7Z-v7o"/>
+                    <tabBarItem key="tabBarItem" title="Nearby" image="People" selectedImage="People-Filled" id="z0S-7Z-v7o"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZp-Fs-Q7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="621"/>
+            <point key="canvasLocation" x="1315.2" y="608.9955022488756"/>
+        </scene>
+        <!--Zone Progress-->
+        <scene sceneID="Pi5-sU-b2Y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xdz-I5-vzY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Zone Progress" image="TreasureMap" selectedImage="TreasureMap-Filled" id="qh9-6N-UY0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="3dE-iP-9ik">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nLS-qF-hDg" kind="relationship" relationship="rootViewController" id="WSW-Y8-9wi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BDA-y8-mLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-305" y="985"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Compass" width="25" height="25"/>
+        <image name="Compass-Filled" width="25" height="25"/>
+        <image name="People" width="25" height="25"/>
+        <image name="People-Filled" width="25" height="25"/>
+        <image name="TreasureMap" width="25" height="25"/>
+        <image name="TreasureMap-Filled" width="25" height="25"/>
+    </resources>
 </document>

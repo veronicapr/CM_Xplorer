@@ -22,43 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Visible to others? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSb-pd-cvI">
-                                <rect key="frame" x="16" y="150" width="160" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-8f-ZWp">
-                                <rect key="frame" x="299" y="145" width="51" height="31"/>
+                                <rect key="frame" x="265" y="123" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="toggleVisibility:" destination="xvF-j0-l6N" eventType="primaryActionTriggered" id="8zh-n2-Bip"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cp-mB-24Z">
-                                <rect key="frame" x="114" y="166" width="146" height="56"/>
+                                <rect key="frame" x="109" y="147" width="146" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search for devices"/>
                                 <connections>
                                     <action selector="searchForDevices:" destination="xvF-j0-l6N" eventType="primaryActionTriggered" id="3YH-Fb-oKk"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xJ0-Nm-ltr">
-                                <rect key="frame" x="16" y="216" width="343" height="359"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S01-Qp-tGp">
-                                <rect key="frame" x="148" y="583" width="78" height="30"/>
+                                <rect key="frame" x="154" y="549" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Disconnect"/>
                                 <connections>
                                     <action selector="disconnect:" destination="xvF-j0-l6N" eventType="primaryActionTriggered" id="43P-fs-EZh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The device name displayed to others…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMv-dg-Yt1">
-                                <rect key="frame" x="16" y="89" width="343" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="The device name displayed to others…" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xMv-dg-Yt1">
+                                <rect key="frame" x="42" y="79" width="280" height="30"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="V5T-lo-Y4W"/>
@@ -67,24 +55,124 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Visible to others? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSb-pd-cvI">
+                                <rect key="frame" x="42" y="123" width="145" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YP6-wm-lVJ">
+                                <rect key="frame" x="21" y="188" width="332" height="357"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Wi4-fM-1cV">
+                                <rect key="frame" x="-5" y="575" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="om9-Gq-mnY"/>
+                                    <barButtonItem title="Search " id="xOB-8Z-YKZ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RQQ-Ts-4gx"/>
+                                    <barButtonItem title="Chat" id="yZN-hZ-xvS">
+                                        <connections>
+                                            <segue destination="3rw-mz-VS9" kind="show" id="5oe-dg-Rdn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="18X-vs-GNL"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xMv-dg-Yt1" firstAttribute="top" secondItem="yMq-X8-1nz" secondAttribute="bottom" constant="20" id="9bS-kK-JPO"/>
+                            <constraint firstItem="XSb-pd-cvI" firstAttribute="leading" secondItem="7p8-zI-S4W" secondAttribute="leadingMargin" constant="10" id="CKW-gW-MQf"/>
                             <constraint firstItem="xMv-dg-Yt1" firstAttribute="leading" secondItem="7p8-zI-S4W" secondAttribute="leadingMargin" constant="10" id="Jga-NZ-dfR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xMv-dg-Yt1" secondAttribute="trailing" constant="10" id="Z0V-VL-gk0"/>
+                            <constraint firstItem="xMv-dg-Yt1" firstAttribute="trailing" secondItem="7p8-zI-S4W" secondAttribute="trailingMargin" constant="10" id="kd1-qo-wZG"/>
+                            <constraint firstItem="xMv-dg-Yt1" firstAttribute="leading" secondItem="7p8-zI-S4W" secondAttribute="leadingMargin" constant="10" id="zmt-gV-G03"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby" id="kCe-CW-SPt"/>
                     <connections>
                         <outlet property="btnDisconnect" destination="S01-Qp-tGp" id="tA2-82-W22"/>
                         <outlet property="swVisible" destination="gYS-8f-ZWp" id="qr7-pa-V2A"/>
-                        <outlet property="tblConnectedDevices" destination="xJ0-Nm-ltr" id="h31-lD-HJv"/>
+                        <outlet property="tblConnectedDevices" destination="YP6-wm-lVJ" id="JpK-P9-HoX"/>
                         <outlet property="txtName" destination="xMv-dg-Yt1" id="GNO-B2-S86"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0d-Gn-fhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3338.4000000000001" y="1093.4032983508246"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="T0f-kz-75V">
+            <objects>
+                <viewController id="3rw-mz-VS9" customClass="ChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eQs-4t-hin"/>
+                        <viewControllerLayoutGuide type="bottom" id="K5q-20-VMz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="01p-sP-qMQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8q-XL-WVB">
+                                <rect key="frame" x="26" y="131" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelMessage:" destination="3rw-mz-VS9" eventType="primaryActionTriggered" id="HP2-Ch-Q8Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVz-mg-Yaa">
+                                <rect key="frame" x="313" y="131" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="3rw-mz-VS9" eventType="primaryActionTriggered" id="tF8-Y5-gEJ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTp-6V-1Xf">
+                                <rect key="frame" x="16" y="169" width="343" height="411"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your message here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxl-qR-C4t">
+                                <rect key="frame" x="25" y="86" width="324" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="VUU-Os-OH8">
+                                <rect key="frame" x="0.0" y="584" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Kzf-DV-djF"/>
+                                    <barButtonItem title="Search " id="0zY-pZ-meO">
+                                        <connections>
+                                            <segue destination="xvF-j0-l6N" kind="show" id="wdS-7U-h6h"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uBE-go-G1m"/>
+                                    <barButtonItem title="Chat" id="LGe-dO-3dY"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="faz-SP-Ovt"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tvChat" destination="NTp-6V-1Xf" id="hoZ-UN-eM2"/>
+                        <outlet property="txtMessage" destination="dxl-qR-C4t" id="2eR-x7-OCv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Bg-ec-12w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4143.1999999999998" y="1101.4992503748126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bej-uG-IAp">
@@ -105,4 +193,7 @@
             <point key="canvasLocation" x="2400.8000000000002" y="1094.3028485757122"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wdS-7U-h6h"/>
+    </inferredMetricsTieBreakers>
 </document>
