@@ -13,15 +13,21 @@
 
 @end
 
+#define UPDATE_FILTER_METERS ((double) 20.0)
+#define LOAD_RADIUS_KM ((double) 2.5)
+
 @implementation MapViewController
 
 // Controler variables
 @synthesize location_manager = _location_manager;
 @synthesize user_location = _user_location;
+@synthesize loaded_regions_center = _loaded_regions_center;
 
 // UI Elements
-@synthesize objMapView;
-@synthesize btnHybrid, btnSatellite, btnStandard;
+@synthesize objMapView = _objMapView;
+@synthesize btnHybrid = _btnHybrid;
+@synthesize btnSatellite = _btnSatellite;
+@synthesize btnStandard = _btnStandard;
 
 // ====================================================================================== //
 // Map Controller calls
@@ -30,9 +36,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadUserLocation];
-    CLCircularRegion* region = [self createRegionWithName:@"My location region" Latitude:_user_location.latitude Longitude:_user_location.longitude andRadius:50];
-    [self startRegionMonitoringAndCheckStateForRegion:region];
+    [self startLocationManager];
+    CLRegion *region = [self createRegionWithName:@"Segunda ponte do forum" Latitude:40.641476 Longitude:-8.651161 andRadius:100.0];
+    [_location_manager startMonitoringForRegion:region];
+}
+/* Notifies the view controller that its view was added to a view hierarchy  */
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    [_location_manager startUpdatingLocation];
+}
+/* Notifies the view controller that its view was removed from a view hierarchy */
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:YES];
+    [_location_manager stopUpdatingLocation];
 }
 /* Memory warning handler */
 - (void)didReceiveMemoryWarning
@@ -42,31 +60,31 @@
 }
 
 // ====================================================================================== //
-// Map methods
+// Location Manager Auxiliar Methods
 // ====================================================================================== //
-// Location Manager
-
-/* Create region with the given coodinates and radius */
-- (void) loadUserLocation
+/* Starts location manager */
+- (void) startLocationManager
 {
     _location_manager = [[CLLocationManager alloc] init];
     _location_manager.delegate = self;
-    _location_manager.distanceFilter = kCLDistanceFilterNone;
-    _location_manager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    _location_manager.distanceFilter = UPDATE_FILTER_METERS;
+    _location_manager.desiredAccuracy = kCLLocationAccuracyBest;
     if ([_location_manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [_location_manager requestWhenInUseAuthorization];
     }
+    if ([_location_manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [_location_manager requestAlwaysAuthorization];
+    }
+    
     [_location_manager startUpdatingLocation];
 }
-/* Create region with the given coodinates and radius */
-- (void) loadMapView
+/* Zooms map at user location */
+- (void)zoomAtUserLocation
 {
-    MKCoordinateSpan objCoorSpan = {.latitudeDelta = 0.001, .longitudeDelta = 0.001};
+    MKCoordinateSpan objCoorSpan = {.latitudeDelta = 0.005, .longitudeDelta = 0.005};
     MKCoordinateRegion objMapRegion = {_user_location, objCoorSpan};
-    [objMapView setRegion:objMapRegion];
+    [_objMapView setRegion:objMapRegion];
 }
-// Regions
-
 /* Create region with the given coodinates and radius */
 - (CLCircularRegion *)createRegionWithName:(NSString *)name Latitude:(CLLocationDegrees)latitude Longitude:(CLLocationDegrees)longitude andRadius:(int) radius
 {
@@ -74,34 +92,28 @@
     CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:radius identifier:name];
     return region;
 }
-/* Starts region monitor for given region and checks that region state */
-- (void)startRegionMonitoringAndCheckStateForRegion:(CLRegion *)region
-{
-    [_location_manager startMonitoringForRegion:region];
-    [_location_manager requestStateForRegion:region];
-}
 
 // ====================================================================================== //
 // CLLocationManagerDelegate notifications handlers
 // ====================================================================================== //
-// Responding to Location Events
-
 /* Tells the delegate that new location data is available */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     _user_location = locations.firstObject.coordinate;
-    [_location_manager stopUpdatingLocation];
-    MKCoordinateSpan objCoorSpan = {.latitudeDelta = 0.001, .longitudeDelta = 0.001};
-    MKCoordinateRegion objMapRegion = {_user_location, objCoorSpan};
-    [objMapView setRegion:objMapRegion];
+    [self zoomAtUserLocation];
 }
 /* Tells the delegate that the location manager was unable to retrieve a location value */
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    [_location_manager stopUpdatingLocation];
+    NSLog(@"didFailWithError %@", error.localizedDescription);
+    if (error.code != 0) {
+        NSString *message = [NSString stringWithFormat:@"%@", error.localizedDescription];
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Location update alert" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
-// Responding to Location Events
-
 /* Tells the delegate that the user entered the specified region */
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
@@ -115,62 +127,80 @@
 /* Tells the delegate about the state of the specified region */
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
-    NSLog(@"Type CLRegionStateInside : %li", CLRegionStateInside);
-    NSLog(@"Type CLRegionStateOutside : %li", CLRegionStateOutside);
-    NSLog(@"Type CLRegionStateUnknown : %li", CLRegionStateUnknown);
-    NSLog(@"%li", state);
-    
-    switch (state)
-    {
+    switch (state) {
         case CLRegionStateInside:
+            NSLog(@"Region state inside");
+            _found_landmarks = _found_landmarks + 1;
+            
             break;
         case CLRegionStateOutside:
+            NSLog(@"Region state outside");
             break;
         case CLRegionStateUnknown:
+            NSLog(@"Region state unknown");
             break;
         default:
+            NSLog(@"It shouldn't happen");
             break;
     }
 }
 /* Tells the delegate that a region monitoring error occurred */
 - (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
 {
-    
+    NSLog(@"monitoringDidFailForRegion %@ %@",region, error.localizedDescription);
+    for (CLRegion *monitoredRegion in manager.monitoredRegions) {
+        NSLog(@"monitoredRegion: %@", monitoredRegion);
+    }
+    if ([manager.monitoredRegions containsObject:region]) {
+        NSString *message = [NSString stringWithFormat:@"%@ %@", region, error.localizedDescription];
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Region monitoring alert" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 /* Tells the delegate that a new region is being monitored */
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
 {
-    
+    [_location_manager requestStateForRegion:region];
 }
+
+// ====================================================================================== //
+// Button functions
+// ====================================================================================== //
+/* Generates a new text for the info labels */
+- (void)updateLabelInfo
+{
+    NSString *landmark_info = [NSString stringWithFormat:@"%d / %lu", _found_landmarks, _region_landmarks];
+    _label_Obelisk_Counter.text = landmark_info;
+}
+
 // ====================================================================================== //
 // Button functions
 // ====================================================================================== //
 /* Changes map to show only roads */
 - (IBAction)btnStandardTapped:(id)sender
 {
-    [btnStandard setBackgroundColor:[UIColor greenColor]];
-    [btnSatellite setBackgroundColor:[UIColor clearColor]];
-    [btnHybrid setBackgroundColor:[UIColor clearColor]];
-    [objMapView setMapType:MKMapTypeStandard];
-    [self loadUserLocation];
+    [_btnStandard setBackgroundColor:[UIColor greenColor]];
+    [_btnSatellite setBackgroundColor:[UIColor clearColor]];
+    [_btnHybrid setBackgroundColor:[UIColor clearColor]];
+    [_objMapView setMapType:MKMapTypeStandard];
 }
 /* Changes map to a satalite view */
 - (IBAction)btnSatelliteTapped:(id)sender
 {
-    [btnStandard setBackgroundColor:[UIColor clearColor]];
-    [btnSatellite setBackgroundColor:[UIColor greenColor]];
-    [btnHybrid setBackgroundColor:[UIColor clearColor]];
-    [objMapView setMapType:MKMapTypeSatellite];
-    [self loadUserLocation];
+    [_btnStandard setBackgroundColor:[UIColor clearColor]];
+    [_btnSatellite setBackgroundColor:[UIColor greenColor]];
+    [_btnHybrid setBackgroundColor:[UIColor clearColor]];
+    [_objMapView setMapType:MKMapTypeSatellite];
 }
 /* Changes map to a satalite view with roads */
 - (IBAction)btnHybridTapped:(id)sender
 {
-    [btnStandard setBackgroundColor:[UIColor clearColor]];
-    [btnSatellite setBackgroundColor:[UIColor clearColor]];
-    [btnHybrid setBackgroundColor:[UIColor greenColor]];
-    [objMapView setMapType:MKMapTypeHybrid];
-    [self loadUserLocation];
+    [_btnStandard setBackgroundColor:[UIColor clearColor]];
+    [_btnSatellite setBackgroundColor:[UIColor clearColor]];
+    [_btnHybrid setBackgroundColor:[UIColor greenColor]];
+    [_objMapView setMapType:MKMapTypeHybrid];
 }
 
 @end

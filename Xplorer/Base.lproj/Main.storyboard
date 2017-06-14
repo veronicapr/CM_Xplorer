@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7eu-IO-qiR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7eu-IO-qiR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,16 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Press Start to read a QR code!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-sV-zMQ">
-                                <rect key="frame" x="46" y="75" width="269" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Start to read a QR code!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-sV-zMQ">
+                                <rect key="frame" x="46" y="94" width="283" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hIo-6l-yLM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" red="0.98668231865284972" green="0.98668231865284972" blue="0.98668231865284972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNe-9E-6wE">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="UNe-9E-6wE">
                                 <rect key="frame" x="0.0" y="574" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gz7-ri-UUW"/>
                                     <barButtonItem title="Start!" id="oAl-YX-1SW">
@@ -42,15 +43,28 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="WS1-1d-E91"/>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR code not yet running..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbT-bv-im5">
-                                <rect key="frame" x="53" y="501" width="269" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR code not yet running..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbT-bv-im5">
+                                <rect key="frame" x="46" y="504" width="283" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wPL-Gy-IL2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.9714013924870466" green="0.9714013924870466" blue="0.9714013924870466" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.086848283678756522" green="0.086848283678756522" blue="0.086848283678756522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UNe-9E-6wE" secondAttribute="bottom" id="8BY-bS-Sey"/>
+                            <constraint firstItem="mfE-sV-zMQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Bub-as-nYs"/>
+                            <constraint firstItem="UNe-9E-6wE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ILV-4y-hSm"/>
+                            <constraint firstItem="UNe-9E-6wE" firstAttribute="top" secondItem="IbT-bv-im5" secondAttribute="bottom" constant="30" id="Oez-Vc-yUO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IbT-bv-im5" secondAttribute="trailing" constant="30" id="RLV-mn-i2O"/>
+                            <constraint firstAttribute="trailing" secondItem="UNe-9E-6wE" secondAttribute="trailing" id="jFy-yC-XOY"/>
+                            <constraint firstItem="mfE-sV-zMQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="mJ7-5F-Bn1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mfE-sV-zMQ" secondAttribute="trailing" constant="30" id="s5X-Xb-ojg"/>
+                            <constraint firstItem="IbT-bv-im5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="vET-5L-OOG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="QR Code Reader" id="mV4-gf-vh7">
                         <barButtonItem key="backBarButtonItem" title="Map" id="hrN-XC-CX4"/>
@@ -77,7 +91,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-wm-8xc">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-wm-8xc">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="xj4-bM-3Jq">
@@ -104,16 +118,37 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="bra-pP-Nc4"/>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Obelisk-Filled-2x" translatesAutoresizingMaskIntoConstraints="NO" id="lxa-8d-0ny">
+                                <rect key="frame" x="31" y="94" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gT1-wB-7W5"/>
+                                    <constraint firstAttribute="width" constant="50" id="mAO-su-p0D"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landmarks not loaded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Mz-9V-sbo">
+                                <rect key="frame" x="81" y="109" width="200" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="EFG-Ah-02N"/>
+                                    <constraint firstAttribute="width" constant="200" id="Nce-TS-Tzw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Jta-wm-8xc" firstAttribute="top" secondItem="czV-ne-u5P" secondAttribute="bottom" id="CvP-wo-cPh"/>
+                            <constraint firstItem="4Mz-9V-sbo" firstAttribute="leading" secondItem="lxa-8d-0ny" secondAttribute="trailing" id="DsC-FS-1yh"/>
                             <constraint firstItem="Jta-wm-8xc" firstAttribute="leading" secondItem="WNR-S6-KLS" secondAttribute="leading" id="FtZ-cs-ilV"/>
+                            <constraint firstItem="lxa-8d-0ny" firstAttribute="top" secondItem="czV-ne-u5P" secondAttribute="bottom" constant="30" id="JtN-hh-8qG"/>
                             <constraint firstAttribute="trailing" secondItem="Jta-wm-8xc" secondAttribute="trailing" id="M4n-UV-TJ9"/>
                             <constraint firstItem="OMb-aj-UsC" firstAttribute="top" secondItem="xj4-bM-3Jq" secondAttribute="bottom" id="Orc-CI-gSM"/>
+                            <constraint firstItem="4Mz-9V-sbo" firstAttribute="top" secondItem="czV-ne-u5P" secondAttribute="bottom" constant="45" id="TEY-vi-e7a"/>
                             <constraint firstItem="xj4-bM-3Jq" firstAttribute="leading" secondItem="WNR-S6-KLS" secondAttribute="leading" id="VEQ-OE-uPB"/>
                             <constraint firstItem="OMb-aj-UsC" firstAttribute="top" secondItem="Jta-wm-8xc" secondAttribute="bottom" id="gow-2n-O8R"/>
                             <constraint firstAttribute="trailing" secondItem="xj4-bM-3Jq" secondAttribute="trailing" id="ifs-Qa-mWL"/>
+                            <constraint firstItem="lxa-8d-0ny" firstAttribute="leading" secondItem="WNR-S6-KLS" secondAttribute="leadingMargin" constant="15" id="p5z-hs-Pxf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="fc6-FF-eAy">
@@ -124,12 +159,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="label_Obelisk_Counter" destination="4Mz-9V-sbo" id="7yQ-6z-pFg"/>
                         <outlet property="objMapView" destination="Jta-wm-8xc" id="QEu-Ch-ud2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmD-oF-z1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3050" y="139"/>
+            <point key="canvasLocation" x="3048.8000000000002" y="138.98050974512745"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gir-ew-rin">
@@ -182,7 +218,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eBH-tl-ybH" id="7ml-td-TaZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -253,7 +289,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7kU-RG-zig" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nearby" image="People" selectedImage="People-Filled" id="z0S-7Z-v7o"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="cdV-pP-mFD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="cdV-pP-mFD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -269,7 +305,6 @@
         <!--Nearby-->
         <scene sceneID="ueC-BH-CJQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CdN-pb-2hP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="QI9-pv-n2n" customClass="ConnectionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nc9-h7-zJB"/>
@@ -359,6 +394,7 @@
                         <outlet property="txtName" destination="qHr-fX-rhB" id="hXg-gJ-xWE"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CdN-pb-2hP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1143" y="1017"/>
         </scene>
@@ -438,6 +474,7 @@
     <resources>
         <image name="Compass" width="25" height="25"/>
         <image name="Compass-Filled" width="25" height="25"/>
+        <image name="Obelisk-Filled-2x" width="50" height="50"/>
         <image name="People" width="25" height="25"/>
         <image name="People-Filled" width="25" height="25"/>
         <image name="TreasureMap" width="25" height="25"/>
