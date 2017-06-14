@@ -10,15 +10,18 @@
 
 @interface AppDelegate ()
 
-
 @end
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+@synthesize mcManager = _mcManager;
+@synthesize database_manager = _database_manager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     _mcManager = [[MPCHandler alloc] init];
+    _database_manager = [[DBManager alloc] initWithDatabaseFilename:@"Xplorer.sql"];
     return YES;
 }
 

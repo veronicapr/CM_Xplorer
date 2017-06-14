@@ -6,13 +6,14 @@
 //  Copyright © 2017 something. All rights reserved.
 //
 
-#import "MPCHandler.h"
 #import <UIKit/UIKit.h>
+#import "MPCHandler.h"
+#import "DBManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) MPCHandler *mcManager;
+@property (strong, nonatomic) DBManager *database_manager;
 
-@property (nonatomic, strong) MPCHandler *mcManager;
 @end
-

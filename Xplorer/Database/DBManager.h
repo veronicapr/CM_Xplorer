@@ -14,19 +14,19 @@
 // ====================================================================================== //
 // Controler variables
 // ====================================================================================== //
-@property (nonatomic, strong) NSString *documentsDirectory;
-@property (nonatomic, strong) NSString *databaseFilename;
-@property (nonatomic, strong) NSMutableArray *arrResults;
-@property (nonatomic, strong) NSMutableArray *arrColumnNames;
-@property (nonatomic) int affectedRows;
-@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic, strong) NSString *documents_directory;
+@property (nonatomic, strong) NSString *database_filename;
+@property (nonatomic, strong) NSMutableArray *array_results;
+@property (nonatomic, strong) NSMutableArray *array_column_names;
+@property (nonatomic) int affected_rows;
+@property (nonatomic) long long last_inserted_row_ID;
 
 // ====================================================================================== //
 // Public methods
 // ====================================================================================== //
--(instancetype)initWithDatabaseFilename:(NSString *)dbFilename;
+-(instancetype)initWithDatabaseFilename:(NSString *)database_filename;
 -(void)copyDatabaseIntoDocumentsDirectory;
--(void)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable;
+-(void)runQuery:(const char *)query isQueryExecutable:(BOOL)query_executable;
 -(NSArray *)loadDataFromDB:(NSString *)query;
 -(void)executeQuery:(NSString *)query;
 
