@@ -28,7 +28,7 @@
 @synthesize loaded_regions_center = _loaded_regions_center;
 
 // UI Elements
-@synthesize objMapView = _objMapView;
+@synthesize map_view = _map_view;
 @synthesize btnHybrid = _btnHybrid;
 @synthesize btnSatellite = _btnSatellite;
 @synthesize btnStandard = _btnStandard;
@@ -42,6 +42,7 @@
     [super viewDidLoad];
     _database_manager = [(AppDelegate*)[[UIApplication sharedApplication] delegate] database_manager];
     _query = nil;
+    [self retrieveUserID];
     [self startLocationManager];
     [self retrieveLandmarksFromDatabase];
 }
@@ -68,35 +69,42 @@
 // Location Manager Auxiliar Methods
 // ====================================================================================== //
 /* Starts location manager */
-- (void) startLocationManager
+-(void)startLocationManager
 {
     _location_manager = [[CLLocationManager alloc] init];
     _location_manager.delegate = self;
     _location_manager.distanceFilter = UPDATE_FILTER_METERS;
     _location_manager.desiredAccuracy = kCLLocationAccuracyBest;
-    if ([_location_manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [_location_manager requestWhenInUseAuthorization];
-    }
     if ([_location_manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
         [_location_manager requestAlwaysAuthorization];
     }
     [_location_manager startUpdatingLocation];
 }
 /* Zooms map at user location */
-- (void)zoomAtUserLocation
+-(void)zoomAtUserLocation
 {
     MKCoordinateSpan objCoorSpan = {.latitudeDelta = 0.005, .longitudeDelta = 0.005};
     MKCoordinateRegion objMapRegion = {_user_location, objCoorSpan};
-    [_objMapView setRegion:objMapRegion];
+    [_map_view setRegion:objMapRegion];
 }
 /* Create region with the given coodinates and radius */
-- (CLCircularRegion *)createRegionWithName:(NSString *)name Latitude:(CLLocationDegrees)latitude Longitude:(CLLocationDegrees)longitude andRadius:(CLLocationDistance) radius
+-(CLCircularRegion *)createRegionWithName:(NSString *)name Latitude:(CLLocationDegrees)latitude Longitude:(CLLocationDegrees)longitude andRadius:(CLLocationDistance) radius
 {
     CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
     CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:radius identifier:name];
     return region;
 }
-/* retreives data from database to create regions */
+/* Retrieves userID from gamecenter */
+-(void)retrieveUserID
+{
+    
+}
+/* add user to database */
+-(void)checkUserIDInDatabase
+{
+    
+}
+/* retreives landmarks from database to create regions */
 -(void)retrieveLandmarksFromDatabase
 {
     // retreive data from database
@@ -117,7 +125,7 @@
     CLLocationDegrees region_longitude;
     CLLocationDistance region_radius;
     
-    //process data
+    // process data
     for (index_of_row = 0; index_of_row < _query_results.count; index_of_row++)
     {
         region_name = [NSString stringWithString:(NSString *)[(NSArray *)[_query_results objectAtIndex:index_of_row] objectAtIndex:index_of_landmark]];
@@ -132,6 +140,9 @@
         region = nil;
         region_name = nil;
     }
+    
+    // update label info
+    _region_landmarks = _query_results.count;
     
     // clear memory
     _query = nil;
@@ -149,8 +160,8 @@
 /* Tells the delegate that the location manager was unable to retrieve a location value */
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"didFailWithError %@", error.localizedDescription);
     if (error.code != 0) {
+        NSLog(@"didFailWithError %@", error.localizedDescription);
         NSString *message = [NSString stringWithFormat:@"%@", error.localizedDescription];
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Location update alert" message:message preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
@@ -204,13 +215,13 @@
 }
 
 // ====================================================================================== //
-// Others
+// CLLocationManagerDelegate notifications handlers
 // ====================================================================================== //
-/* Custom annotation image */
+/* Returns the view associated with the specified annotation object */
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     static NSString *SFAnnotationIdentifier = @"SFAnnotationIdentifier";
-    MKPinAnnotationView *pinView = (MKPinAnnotationView *)[_objMapView dequeueReusableAnnotationViewWithIdentifier:SFAnnotationIdentifier];
+    MKPinAnnotationView *pinView = (MKPinAnnotationView *)[theMapView dequeueReusableAnnotationViewWithIdentifier:SFAnnotationIdentifier];
     if (!pinView)
     {
         MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:SFAnnotationIdentifier];
@@ -224,6 +235,10 @@
     }
     return pinView;
 }
+
+// ====================================================================================== //
+// Others
+// ====================================================================================== //
 /* Generates a new text for the info labels */
 - (void)updateLabelInfo
 {
@@ -240,7 +255,7 @@
     [_btnStandard setBackgroundColor:[UIColor greenColor]];
     [_btnSatellite setBackgroundColor:[UIColor clearColor]];
     [_btnHybrid setBackgroundColor:[UIColor clearColor]];
-    [_objMapView setMapType:MKMapTypeStandard];
+    [_map_view setMapType:MKMapTypeStandard];
 }
 /* Changes map to a satalite view */
 - (IBAction)btnSatelliteTapped:(id)sender
@@ -248,7 +263,7 @@
     [_btnStandard setBackgroundColor:[UIColor clearColor]];
     [_btnSatellite setBackgroundColor:[UIColor greenColor]];
     [_btnHybrid setBackgroundColor:[UIColor clearColor]];
-    [_objMapView setMapType:MKMapTypeSatellite];
+    [_map_view setMapType:MKMapTypeSatellite];
 }
 /* Changes map to a satalite view with roads */
 - (IBAction)btnHybridTapped:(id)sender
@@ -256,7 +271,7 @@
     [_btnStandard setBackgroundColor:[UIColor clearColor]];
     [_btnSatellite setBackgroundColor:[UIColor clearColor]];
     [_btnHybrid setBackgroundColor:[UIColor greenColor]];
-    [_objMapView setMapType:MKMapTypeHybrid];
+    [_map_view setMapType:MKMapTypeHybrid];
 }
 
 @end

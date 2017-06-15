@@ -33,7 +33,7 @@
 // ====================================================================================== //
 // UI Elements
 // ====================================================================================== //
-@property (weak, nonatomic) IBOutlet MKMapView *objMapView;
+@property (weak, nonatomic) IBOutlet MKMapView *map_view;
 @property (weak, nonatomic) IBOutlet UIButton *btnStandard;
 @property (weak, nonatomic) IBOutlet UIButton *btnSatellite;
 @property (weak, nonatomic) IBOutlet UIButton *btnHybrid;
@@ -54,5 +54,12 @@
 - (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error;
 /* Tells the delegate that a new region is being monitored */
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region;
+
+// ====================================================================================== //
+// MKMapViewDelegate notifications handlers
+// ====================================================================================== //
+/* Returns the view associated with the specified annotation object */
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation;
+
 @end
 

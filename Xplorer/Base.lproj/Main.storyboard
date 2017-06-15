@@ -160,7 +160,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="label_Obelisk_Counter" destination="4Mz-9V-sbo" id="7yQ-6z-pFg"/>
-                        <outlet property="objMapView" destination="Jta-wm-8xc" id="QEu-Ch-ud2"/>
+                        <outlet property="map_view" destination="Jta-wm-8xc" id="ZRp-vd-WH3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmD-oF-z1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,7 +247,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xgm-G3-Dhc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="Compass" selectedImage="Compass-Filled" id="fIT-zI-kPh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="UHc-lu-H2C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="UHc-lu-H2C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -266,7 +266,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7kU-RG-zig" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nearby" image="People" selectedImage="People-Filled" id="z0S-7Z-v7o"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="cdV-pP-mFD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="cdV-pP-mFD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -435,7 +435,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmx-OP-dOw">
-                                <rect key="frame" x="16" y="164" width="343" height="444"/>
+                                <rect key="frame" x="16" y="164" width="343" height="395"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
@@ -451,7 +451,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="nle-xa-zT5">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="AWb-3r-PFL"/>
                                     <barButtonItem title="Search " id="ABV-5l-oV4">
@@ -500,7 +500,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nZN-Be-RKJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Zone Progress" image="TreasureMap" selectedImage="TreasureMap-Filled" id="sYW-Fk-maC"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="WAH-mR-KAC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="WAH-mR-KAC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
