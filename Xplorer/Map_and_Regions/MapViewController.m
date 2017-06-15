@@ -42,9 +42,12 @@
     [super viewDidLoad];
     _database_manager = [(AppDelegate*)[[UIApplication sharedApplication] delegate] database_manager];
     _query = nil;
+    _query_results = nil;
     [self retrieveUserID];
+    [self checkUserIDInDatabase];
     [self startLocationManager];
     [self retrieveLandmarksFromDatabase];
+    [self updateLabelInfo];
 }
 /* Notifies the view controller that its view was added to a view hierarchy  */
 - (void)viewDidAppear:(BOOL)animated
@@ -83,21 +86,28 @@
 /* Zooms map at user location */
 -(void)zoomAtUserLocation
 {
-    MKCoordinateSpan objCoorSpan = {.latitudeDelta = 0.005, .longitudeDelta = 0.005};
-    MKCoordinateRegion objMapRegion = {_user_location, objCoorSpan};
-    [_map_view setRegion:objMapRegion];
+    MKCoordinateSpan coordinate_span = {.latitudeDelta = 0.005, .longitudeDelta = 0.005};
+    MKCoordinateRegion map_region = {_user_location, coordinate_span};
+    [_map_view setRegion:map_region];
 }
 /* Create region with the given coodinates and radius */
 -(CLCircularRegion *)createRegionWithName:(NSString *)name Latitude:(CLLocationDegrees)latitude Longitude:(CLLocationDegrees)longitude andRadius:(CLLocationDistance) radius
 {
-    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(latitude, longitude);
-    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:centerCoordinate radius:radius identifier:name];
+    CLLocationCoordinate2D center_coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+    CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:center_coordinate radius:radius identifier:name];
     return region;
 }
 /* Retrieves userID from gamecenter */
 -(void)retrieveUserID
 {
-    
+    GKLocalPlayer *local_player = [GKLocalPlayer localPlayer];
+    local_player.authenticateHandler = ^(UIViewController *viewController, NSError *error)
+    {
+        if (viewController != nil) {
+            [self presentViewController:viewController animated:YES completion:nil];
+        }
+    };
+    NSLog(@"%@", local_player.playerID);
 }
 /* add user to database */
 -(void)checkUserIDInDatabase
@@ -107,7 +117,7 @@
 /* retreives landmarks from database to create regions */
 -(void)retrieveLandmarksFromDatabase
 {
-    // retreive data from database
+    // retreive data from databaseß
     _query = @"Select * from Areas where Active = 1";
     _query_results = [[NSArray alloc] initWithArray:[_database_manager loadDataFromDB:_query]];
     
@@ -148,6 +158,12 @@
     _query = nil;
     _query_results = nil;
 }
+/*  */
+-(void)addMapIconToRegion:(CLRegion *)region
+{
+    Landmark *landmark = [[Landmark alloc] initWithName:[(CLCircularRegion *)region identifier] Coordinate:[(CLCircularRegion *)region center]];
+    [_map_view addAnnotation:landmark];
+}
 // ====================================================================================== //
 // CLLocationManagerDelegate notifications handlers
 // ====================================================================================== //
@@ -172,7 +188,8 @@
 /* Tells the delegate that the user entered the specified region */
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
-    
+    _found_landmarks = _found_landmarks + 1;
+    [self updateLabelInfo];
 }
 /* Tells the delegate about the state of the specified region */
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
@@ -180,6 +197,8 @@
     switch (state) {
         case CLRegionStateInside:
             NSLog(@"Region state inside");
+            _found_landmarks = _found_landmarks + 1;
+            [self updateLabelInfo];
             break;
         case CLRegionStateOutside:
             NSLog(@"Region state outside");
@@ -212,28 +231,33 @@
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
 {
     [_location_manager requestStateForRegion:region];
+    [self addMapIconToRegion:region];
 }
 
 // ====================================================================================== //
 // CLLocationManagerDelegate notifications handlers
 // ====================================================================================== //
 /* Returns the view associated with the specified annotation object */
-- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    static NSString *SFAnnotationIdentifier = @"SFAnnotationIdentifier";
-    MKPinAnnotationView *pinView = (MKPinAnnotationView *)[theMapView dequeueReusableAnnotationViewWithIdentifier:SFAnnotationIdentifier];
-    if (!pinView)
+    if([annotation isKindOfClass:[Landmark class]])
     {
-        MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:SFAnnotationIdentifier];
-        UIImage *flagImage = [UIImage imageNamed:@"Obelisk-Filled.png"];
-        annotationView.image = flagImage;
+        Landmark *landmark = (Landmark *)annotation;
+        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"Landmark"];
+        if(annotationView == nil)
+        {
+            annotationView = landmark.annotationView;
+        }
+        else
+        {
+            annotationView.annotation = annotation;
+        }
         return annotationView;
     }
     else
     {
-        pinView.annotation = annotation;
+        return nil;
     }
-    return pinView;
 }
 
 // ====================================================================================== //

@@ -187,55 +187,55 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Landmarks-->
         <scene sceneID="BXq-E1-hxZ">
             <objects>
-                <tableViewController id="ajV-Xg-ghN" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="H5S-sv-kxQ">
+                <tableViewController id="ajV-Xg-ghN" customClass="LandmarkTableController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="75" sectionHeaderHeight="18" sectionFooterHeight="18" id="H5S-sv-kxQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nfY-xk-8Gu">
-                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="idLandmarkCell" textLabel="Xxw-da-oyf" detailTextLabel="NlO-WL-I12" imageView="wNU-e4-jPT" style="IBUITableViewCellStyleSubtitle" id="Cik-JP-U9v">
+                                <rect key="frame" x="0.0" y="56" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nfY-xk-8Gu" id="HTg-kd-xe0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cik-JP-U9v" id="Na4-62-bIJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Obelisk-2x" translatesAutoresizingMaskIntoConstraints="NO" id="2cU-9T-OMn">
-                                            <rect key="frame" x="5" y="5" width="50" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="TOA-mq-5VR"/>
-                                                <constraint firstAttribute="height" constant="50" id="itw-H8-F1A"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landmark name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4D4-Gn-sXp">
-                                            <rect key="frame" x="55" y="19.5" width="123" height="21"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xxw-da-oyf">
+                                            <rect key="frame" x="80" y="20" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NlO-WL-I12">
+                                            <rect key="frame" x="80" y="41" width="44" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Obelisk-2x" id="wNU-e4-jPT">
+                                            <rect key="frame" x="15" y="12" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="2cU-9T-OMn" secondAttribute="bottom" constant="5" id="HEo-bS-Keb"/>
-                                        <constraint firstItem="4D4-Gn-sXp" firstAttribute="centerY" secondItem="HTg-kd-xe0" secondAttribute="centerY" id="Pnc-PU-IYE"/>
-                                        <constraint firstItem="2cU-9T-OMn" firstAttribute="leading" secondItem="HTg-kd-xe0" secondAttribute="leading" constant="5" id="WOx-qn-ccB"/>
-                                        <constraint firstItem="2cU-9T-OMn" firstAttribute="centerY" secondItem="HTg-kd-xe0" secondAttribute="centerY" id="oj1-I1-BuY"/>
-                                        <constraint firstItem="4D4-Gn-sXp" firstAttribute="leading" secondItem="2cU-9T-OMn" secondAttribute="trailing" id="rrO-Xp-cbp"/>
-                                        <constraint firstItem="2cU-9T-OMn" firstAttribute="top" secondItem="HTg-kd-xe0" secondAttribute="top" constant="5" id="wVe-oN-dsS"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="ajV-Xg-ghN" id="f7N-Pn-8CD"/>
                             <outlet property="delegate" destination="ajV-Xg-ghN" id="5r6-uN-hEA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="z9n-a8-Mxv"/>
+                    <navigationItem key="navigationItem" title="Landmarks" id="z9n-a8-Mxv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vB5-If-rGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +247,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xgm-G3-Dhc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="Compass" selectedImage="Compass-Filled" id="fIT-zI-kPh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="UHc-lu-H2C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="UHc-lu-H2C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -266,7 +266,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7kU-RG-zig" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nearby" image="People" selectedImage="People-Filled" id="z0S-7Z-v7o"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="cdV-pP-mFD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="cdV-pP-mFD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -500,7 +500,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nZN-Be-RKJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Zone Progress" image="TreasureMap" selectedImage="TreasureMap-Filled" id="sYW-Fk-maC"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="WAH-mR-KAC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="WAH-mR-KAC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -525,6 +525,6 @@
         <image name="TreasureMap-Filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fxw-1e-nrH"/>
+        <segue reference="C7W-ti-XN7"/>
     </inferredMetricsTieBreakers>
 </document>

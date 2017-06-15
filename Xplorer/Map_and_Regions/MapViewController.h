@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <GameKit/Gamekit.h>
 #import "AppDelegate.h"
-#import "DBManager.h"
+#import "Landmark.h"
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
@@ -59,7 +60,7 @@
 // MKMapViewDelegate notifications handlers
 // ====================================================================================== //
 /* Returns the view associated with the specified annotation object */
-- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation;
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation;
 
 @end
 

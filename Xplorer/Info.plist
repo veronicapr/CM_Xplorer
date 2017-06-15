@@ -23,7 +23,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Used to scan QR codes</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Your location is used to find you and for regions entries/exits</string>
+	<string>Location is used to find you and regions entry/exitts</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -21,11 +21,13 @@
 		378975781ECDDF42003BDBF9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378975771ECDDF42003BDBF9 /* CoreLocation.framework */; };
 		3789757A1ECDDF52003BDBF9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378975791ECDDF52003BDBF9 /* MapKit.framework */; };
 		D41F0D5C1EF1ABD100F8D668 /* LandmarkTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41F0D5B1EF1ABD000F8D668 /* LandmarkTableController.m */; };
+		D45A150C1EF2FDCF00DBBF78 /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = D45A150B1EF2FDCF00DBBF78 /* Landmark.m */; };
 		D48AF32D1EEED03A004D2F01 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D48AF32C1EEED03A004D2F01 /* libsqlite3.0.tbd */; };
 		D4954AF21EE98CDE003AF442 /* xplorer.sql in Resources */ = {isa = PBXBuildFile; fileRef = D4954AF11EE98CDE003AF442 /* xplorer.sql */; };
 		D4BEF72C1EE8D25A00E6CADD /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BEF72B1EE8D25A00E6CADD /* ChatViewController.m */; };
 		D4BEF7311EE8D62A00E6CADD /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BEF7301EE8D62A00E6CADD /* DBManager.m */; };
 		D4BEF7331EE8E1EA00E6CADD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4BEF7321EE8E1EA00E6CADD /* Foundation.framework */; };
+		D4E8AFFA1EF2E7AE00B2F6AB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E8AFF91EF2E7AE00B2F6AB /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		378975771ECDDF42003BDBF9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		378975791ECDDF52003BDBF9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D41F0D5B1EF1ABD000F8D668 /* LandmarkTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LandmarkTableController.m; path = ZoneProgress/LandmarkTableController.m; sourceTree = "<group>"; };
+		D45A150B1EF2FDCF00DBBF78 /* Landmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Landmark.m; path = Map_and_Regions/Landmark.m; sourceTree = "<group>"; };
+		D45A150D1EF2FDE800DBBF78 /* Landmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Landmark.h; path = Map_and_Regions/Landmark.h; sourceTree = "<group>"; };
+		D45A150E1EF30C9D00DBBF78 /* LandmarkTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LandmarkTableController.h; path = ZoneProgress/LandmarkTableController.h; sourceTree = "<group>"; };
 		D48AF32C1EEED03A004D2F01 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		D4954AF11EE98CDE003AF442 /* xplorer.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = xplorer.sql; sourceTree = "<group>"; };
 		D4BEF72A1EE8D25400E6CADD /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		D4BEF72F1EE8D61600E6CADD /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBManager.h; path = Database/DBManager.h; sourceTree = "<group>"; };
 		D4BEF7301EE8D62A00E6CADD /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBManager.m; path = Database/DBManager.m; sourceTree = "<group>"; };
 		D4BEF7321EE8E1EA00E6CADD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D4E8AFF91EF2E7AE00B2F6AB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,11 +82,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48AF32D1EEED03A004D2F01 /* libsqlite3.0.tbd in Frameworks */,
 				D4BEF7331EE8E1EA00E6CADD /* Foundation.framework in Frameworks */,
-				3789757A1ECDDF52003BDBF9 /* MapKit.framework in Frameworks */,
 				378975781ECDDF42003BDBF9 /* CoreLocation.framework in Frameworks */,
+				3789757A1ECDDF52003BDBF9 /* MapKit.framework in Frameworks */,
 				378975761ECDDF37003BDBF9 /* AVFoundation.framework in Frameworks */,
+				D4E8AFFA1EF2E7AE00B2F6AB /* GameKit.framework in Frameworks */,
+				D48AF32D1EEED03A004D2F01 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +170,8 @@
 			children = (
 				378975731ECDDD85003BDBF9 /* MapViewController.h */,
 				3789756E1ECDDD2C003BDBF9 /* MapViewController.m */,
+				D45A150D1EF2FDE800DBBF78 /* Landmark.h */,
+				D45A150B1EF2FDCF00DBBF78 /* Landmark.m */,
 			);
 			name = Map_and_Regions;
 			sourceTree = "<group>";
@@ -183,11 +192,12 @@
 		378975741ECDDF37003BDBF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D48AF32C1EEED03A004D2F01 /* libsqlite3.0.tbd */,
 				D4BEF7321EE8E1EA00E6CADD /* Foundation.framework */,
-				378975791ECDDF52003BDBF9 /* MapKit.framework */,
 				378975771ECDDF42003BDBF9 /* CoreLocation.framework */,
+				378975791ECDDF52003BDBF9 /* MapKit.framework */,
 				378975751ECDDF37003BDBF9 /* AVFoundation.framework */,
+				D4E8AFF91EF2E7AE00B2F6AB /* GameKit.framework */,
+				D48AF32C1EEED03A004D2F01 /* libsqlite3.0.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,6 +205,7 @@
 		D41F0D5D1EF1ABFA00F8D668 /* ZoneProgress */ = {
 			isa = PBXGroup;
 			children = (
+				D45A150E1EF30C9D00DBBF78 /* LandmarkTableController.h */,
 				D41F0D5B1EF1ABD000F8D668 /* LandmarkTableController.m */,
 			);
 			name = ZoneProgress;
@@ -336,6 +347,7 @@
 				374AB6D31ECCB3900033DE00 /* AppDelegate.m in Sources */,
 				377A2B021EE6F59200342BCD /* MPCHandler.m in Sources */,
 				377A2B081EE6FD8A00342BCD /* ConnectionsViewController.m in Sources */,
+				D45A150C1EF2FDCF00DBBF78 /* Landmark.m in Sources */,
 				D4BEF7311EE8D62A00E6CADD /* DBManager.m in Sources */,
 				D4BEF72C1EE8D25A00E6CADD /* ChatViewController.m in Sources */,
 				374AB6D01ECCB3900033DE00 /* main.m in Sources */,
